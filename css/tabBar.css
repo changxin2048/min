@@ -10,11 +10,6 @@
   padding-top: var(--control-space-top);
   padding-left: var(--control-space-left);
   padding-right: var(--control-space-right);
-  background-color: #fff;
-}
-
-.dark-mode #navbar {
-  background-color: rgb(33, 37, 43);
 }
 
 /* when the tab-group is white, we need a line to separate it from the webviews */
