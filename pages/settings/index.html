@@ -8,12 +8,27 @@
     <link rel="stylesheet" href="../../css/base.css" />
     <link rel="stylesheet" href="settings.css" />
     <link rel="stylesheet" href="../../ext/icons/iconfont.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" />
   </head>
 
   <body>
     <div class="short-hero blue-gradient-background">
       <div class="container">
         <h2 data-string="settingsPreferencesHeading"></h2>
+      </div>
+    </div>
+
+    <div class="settings-container" id="sidebar-bookmarks-container">
+      <h3>Sidebar Bookmarks</h3>
+      <div class="settings-info-subheading">
+        Manage the bookmarks shown in the sidebar. These links appear in the left sidebar for quick access.
+      </div>
+      <div id="sidebar-bookmarks-editor">
+        <div id="sidebar-bookmarks-list"></div>
+        <button id="add-sidebar-bookmark" class="bookmark-add-btn">
+          <i class="ri-add-line"></i>
+          <span>Add Bookmark</span>
+        </button>
       </div>
     </div>
 

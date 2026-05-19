@@ -1,5 +1,6 @@
 var urlParser = require('util/urlParser.js')
 var settings = require('util/settings/settings.js')
+var sidebar = require('sidebar.js')
 
 /* implements selecting webviews, switching between them, and creating new ones. */
 
@@ -165,11 +166,12 @@ const webviews = {
       }
 
       const viewMargins = webviews.viewMargins
+      const sidebarWidth = sidebar.getWidth()
 
       let position = {
-        x: 0 + Math.round(viewMargins[3]),
+        x: sidebarWidth + Math.round(viewMargins[3]),
         y: 0 + Math.round(viewMargins[0]) + navbarHeight,
-        width: window.innerWidth - Math.round(viewMargins[1] + viewMargins[3]),
+        width: window.innerWidth - sidebarWidth - Math.round(viewMargins[1] + viewMargins[3]),
         height: window.innerHeight - Math.round(viewMargins[0] + viewMargins[2]) - navbarHeight
       }
 

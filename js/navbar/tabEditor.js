@@ -40,16 +40,6 @@ const tabEditor = {
     // https://github.com/minbrowser/min/discussions/1506
     tabEditor.input.scrollLeft = 0
 
-    searchbar.show(tabEditor.input)
-
-    if (showSearchbar !== false) {
-      if (editingValue) {
-        searchbar.showResults(editingValue, null)
-      } else {
-        searchbar.showResults('', null)
-      }
-    }
-
     /* animation */
     if (tabs.count() > 1) {
       requestAnimationFrame(function () {
@@ -93,13 +83,6 @@ const tabEditor = {
 
     keyboardNavigationHelper.addToGroup('searchbar', tabEditor.container)
 
-    tabEditor.input.addEventListener('input', function (e) {
-      // handles all inputs except for the case where the selection is moved (since we call preventDefault() there)
-      searchbar.showResults(this.value, {
-        isDeletion: e.inputType.includes('delete')
-      })
-    })
-
     tabEditor.input.addEventListener('keypress', function (e) {
       if (e.keyCode === 13) { // return key pressed; update the url
         if (this.getAttribute('data-autocomplete') && this.getAttribute('data-autocomplete').toLowerCase() === this.value.toLowerCase()) {
@@ -110,14 +93,6 @@ const tabEditor = {
           searchbar.openURL(this.value, e)
         }
         e.preventDefault()
-      }
-
-      // on keydown, if the autocomplete result doesn't change, we move the selection instead of regenerating it to avoid race conditions with typing. Adapted from https://github.com/patrickburke/jquery.inlineComplete
-
-      if (e.key && this.selectionEnd === this.value.length && this.value[this.selectionStart] === e.key) {
-        this.selectionStart += 1
-        e.preventDefault()
-        searchbar.showResults(this.value.substring(0, this.selectionStart), {})
       }
     })
 

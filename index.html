@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="dist/bundle.css" />
     <link rel="stylesheet" href="ext/icons/iconfont.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" />
   </head>
 
   <body>
@@ -110,7 +111,7 @@
 
     <div
       id="navbar"
-      class="theme-background-color theme-text-color windowDragHandle"
+      class="windowDragHandle"
       tabindex="-1"
     >
     <div id="mac-window-drag-area"></div>
@@ -188,6 +189,35 @@
 
     <div id="searchbar" class="theme-background-color theme-text-color">
       <div class="top-answer-area"></div>
+    </div>
+
+    <div id="sidebar" class="windowDragHandle">
+      <button id="sidebar-toggle" aria-label="Toggle sidebar">
+        <i class="i carbon:chevron-left"></i>
+      </button>
+      <div id="sidebar-content">
+        <div class="sidebar-section-title">Quick Links</div>
+        <div id="sidebar-bookmarks">
+          <a class="sidebar-item sidebar-bookmark" href="https://doubao.com" data-url="https://doubao.com">
+            <i class="ri-robot-2-line"></i>
+            <span>Doubao</span>
+          </a>
+          <a class="sidebar-item sidebar-bookmark" href="https://chat.deepseek.com" data-url="https://chat.deepseek.com">
+            <i class="ri-chat-ai-line"></i>
+            <span>DeepSeek</span>
+          </a>
+          <a class="sidebar-item sidebar-bookmark" href="https://kimi.ai" data-url="https://kimi.ai">
+            <i class="ri-planet-line"></i>
+            <span>Kimi</span>
+          </a>
+        </div>
+      </div>
+      <div id="sidebar-footer">
+        <button id="sidebar-settings" aria-label="Settings">
+          <i class="ri-settings-4-line"></i>
+        </button>
+      </div>
+      <div id="sidebar-resize-handle"></div>
     </div>
 
     <div id="overlay"></div>
